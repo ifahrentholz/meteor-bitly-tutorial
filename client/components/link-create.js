@@ -25,7 +25,7 @@ class LinkCreate extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit.bind(this)}>
+      <form onSubmit={this.handleSubmit.bind(this)} className="form-group">
         <div className="form-group">
           <div className="text-danger">{this.state.error}</div>
           <label>Link to shorten</label>

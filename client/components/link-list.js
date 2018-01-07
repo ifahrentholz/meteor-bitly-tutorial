@@ -17,7 +17,7 @@ class LinkList extends Component {
         <tr key={link._id}>
           <td>{url}</td>
           <td>
-            <a href={shortLink}>{shortLink}</a>
+            <a href={shortLink} target="_blank">{shortLink}</a>
           </td>
           <td>
             {clicks}
