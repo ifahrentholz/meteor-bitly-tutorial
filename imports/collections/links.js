@@ -11,9 +11,14 @@ Meteor.methods({
     check(payload, Match.Where(payload => validUrl.isUri(payload)));
 
     // save URL by generating a token
-    const token = tokenGenerator.generate();
-    Links.insert({ url, token, clicks: 0 });
+    const token = tokenGenerator.generate().substring(0, 7);
+    Links.insert({ url: payload, token, clicks: 0 });
+  },
+
+  'link.remove': function (payload) {
+    Links.remove(payload);
   }
 });
+
 
 export const Links = new Mongo.Collection('links');
